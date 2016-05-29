@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50110/SelectService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfShowInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ShowInfo" nillable="true" type="tns:ShowInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfShowInfo" nillable="true" type="tns:ArrayOfShowInfo" />
+  <xs:complexType name="ShowInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ShowDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ShowName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShowStartTime" type="ser:duration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ShowInfo" nillable="true" type="tns:ShowInfo" />
+  <xs:complexType name="ArrayOfShowDetailInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ShowDetailInfo" nillable="true" type="tns:ShowDetailInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfShowDetailInfo" nillable="true" type="tns:ArrayOfShowDetailInfo" />
+  <xs:complexType name="ShowDetailInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ShowDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ShowName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShowStartTime" type="ser:duration" />
+      <xs:element minOccurs="0" name="VenueName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ShowDetailInfo" nillable="true" type="tns:ShowDetailInfo" />
+</xs:schema>
